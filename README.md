@@ -2,6 +2,10 @@
 
 A login server app for NFC and cell phone.
 
+## Setup
+
+Please copy example.application.properties to application.properties in src/main/resources folder and change your PostgreSQL user name and password.
+
 ## Connected projects
 
 - [login-ng](https://github.com/pzoli/login-ng)
