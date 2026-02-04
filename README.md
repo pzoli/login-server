@@ -1,6 +1,6 @@
 # login-server
 
-A login server app for NFC and cell phone.
+A log server app for NFC card and cell phone.
 
 ## Setup
 
