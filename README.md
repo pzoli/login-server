@@ -13,3 +13,5 @@ Please copy example.application.properties to application.properties in src/main
 - [ForrasAdminRFIDReader](https://github.com/pzoli/ForrasAdminRFIDReader)
 - [NFCReaderSettingsSwing](https://github.com/pzoli/NFCReaderSettingsSwing)
 - [ForrasAdminRFIDReaderConfigurator](https://github.com/pzoli/ForrasAdminRFIDReaderConfigurator)
+
+![Login-server SwaggerUI](docs/Login-server-SwaggerUI.png)
