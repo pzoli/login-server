@@ -4,7 +4,7 @@ A log server app for NFC card and cell phone.
 
 ## Setup
 
-Please copy example.application.properties to application.properties in src/main/resources folder and change your PostgreSQL user name and password.
+Please copy example.application.properties to application.properties in src/main/resources folder and change your PostgreSQL user name and password and keycloak authentication parameters.
 
 ## Connected projects
 
