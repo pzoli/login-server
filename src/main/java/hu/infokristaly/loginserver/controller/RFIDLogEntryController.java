@@ -27,6 +27,7 @@ class RFIDLogEntryController {
     }
 
     @GetMapping("total-row-count")
+    @PreAuthorize("hasRole('user')")
     public long getTotalRowCount() {
         long rowc = rfidLogEntryService.getTotalRowCount();
         return rowc;

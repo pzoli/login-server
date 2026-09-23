@@ -25,6 +25,7 @@ class RFIDFailedLogController {
         return rfidFailedLogService.getAll(pageable);
     }
     @GetMapping("total-row-count")
+    @PreAuthorize("hasRole('user')")
     public long getTotalRowCount() {
         long rowc = rfidFailedLogService.getTotalRowCount();
         return rowc;
