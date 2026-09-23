@@ -6,6 +6,7 @@ import hu.infokristaly.loginserver.repository.RFIDLogEntryRepository;
 import hu.infokristaly.loginserver.service.RFIDLogEntryService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,14 @@ class RFIDLogEntryController {
 
     @GetMapping
     @PreAuthorize("hasRole('user')")
-    public List<RFIDLogEntry> findAll() {
-        return rfidLogEntryService.findAll();
+    public List<RFIDLogEntry> findAll(Pageable pageable) {
+        return rfidLogEntryService.findAll(pageable);
+    }
+
+    @GetMapping("total-row-count")
+    public long getTotalRowCount() {
+        long rowc = rfidLogEntryService.getTotalRowCount();
+        return rowc;
     }
 
     @PostMapping()
