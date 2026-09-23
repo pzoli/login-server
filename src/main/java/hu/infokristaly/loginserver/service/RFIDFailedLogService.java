@@ -3,6 +3,7 @@ package hu.infokristaly.loginserver.service;
 import hu.infokristaly.loginserver.entity.RFIDFailedLog;
 import hu.infokristaly.loginserver.repository.RFIDFailedLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +14,12 @@ public class RFIDFailedLogService {
     @Autowired
     private RFIDFailedLogRepository rfidFailedLogRepository;
 
-    public List<RFIDFailedLog> getAll() {
-        return rfidFailedLogRepository.findAllByOrderByLogDateDesc();
+    public List<RFIDFailedLog> getAll(Pageable pageable) {
+        return rfidFailedLogRepository.findAllByOrderByLogDateDesc(pageable);
+    }
+
+    public long getTotalRowCount() {
+        return rfidFailedLogRepository.count();
     }
 
     public RFIDFailedLog save(RFIDFailedLog rfidFailedLog) {

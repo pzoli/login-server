@@ -5,6 +5,7 @@ import hu.infokristaly.loginserver.entity.RFIDFailedLog;
 import hu.infokristaly.loginserver.service.RFIDFailedLogService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,13 @@ class RFIDFailedLogController {
 
     @GetMapping()
     @PreAuthorize("hasRole('user')")
-    public List<RFIDFailedLog> findAll() {
-        return rfidFailedLogService.getAll();
+    public List<RFIDFailedLog> findAll(Pageable pageable) {
+        return rfidFailedLogService.getAll(pageable);
+    }
+    @GetMapping("total-row-count")
+    public long getTotalRowCount() {
+        long rowc = rfidFailedLogService.getTotalRowCount();
+        return rowc;
     }
 
     @PostMapping()
